@@ -22,12 +22,34 @@ platform :ios do
     upload_to_testflight
   end
 
-  desc "test - danger - swiftlint - slather - slack"
+  desc "Launch Test Lane for: Unit Test - danger - swiftlint - slather - slack"
   lane :test do
-    swiftlint(output_file: "swiftlint.result.json", config_file: ".swiftlint.yml", executable: "Pods/SwiftLint/swiftlint")
-    scan(workspace: "esgi.xcworkspace", devices: ["iPhone XS"], clean: "true",
-      code_coverage: "true", output_types: "junit",
-      output_directory: "report/scan")
-    slather(scheme: "esgi", workspace: "esgi.xcworkspace", html: "true")
+    swiftlint(
+      output_file: "report/swiftlint/swiftlint.report.xml", 
+      config_file: ".swiftlint.yml", 
+      executable: "Pods/SwiftLint/swiftlint", 
+      reporter: "checkstyle"
+    )
+    scan(
+      workspace: "esgi.xcworkspace", 
+      devices: ["iPhone XS"], 
+      clean: "true",
+      code_coverage: "true", 
+      output_types: "junit",
+      output_directory: "report/scan",
+      slack_only_on_failure: "true"
+    )
+    slather(scheme: "esgi", workspace: "esgi.xcworkspace", html: "true", use_bundle_exec: "true")
   end
+
+  error do |lane, exception|
+    commit = last_git_commit
+    author = commit[:author]
+    slack(
+      message: "WESH " + author + " !!! t'as fait quoi ?",
+      payload: { "Output" => exception.to_s },
+      slack_url: "#{ENV['SLACK_HOOK']}",
+      success: false
+    )
+ end
 end

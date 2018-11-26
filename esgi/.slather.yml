@@ -7,3 +7,4 @@ scheme: Esgi
 output_directory: report/slather
 ignore:
   - Pods/*
+  - "Frameworks/*"

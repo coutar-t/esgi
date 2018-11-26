@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
-# @todo fix version
-gem "fastlane"
-gem 'slather'
+gem 'fastlane', '~> 2.108'
+gem 'slather', '~> 2.4', '>= 2.4.6'
+gem 'cocoapods', '~> 1.5', '>= 1.5.3'
+gem 'dotenv', '~> 2.1', '>= 2.1.1'
