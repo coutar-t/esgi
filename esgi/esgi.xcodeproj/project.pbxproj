@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		176BD7BABEBBB82AC035663B /* Pods_esgiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA682D40290FFD15D86B75D9 /* Pods_esgiTests.framework */; };
+		585AB58D3274742ED1B5949E /* Pods_esgi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70AC790BFF4D11BEC2ACF49 /* Pods_esgi.framework */; };
 		788E7C2021A5889D001BE252 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788E7C1F21A5889D001BE252 /* AppDelegate.swift */; };
 		788E7C2221A5889D001BE252 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788E7C2121A5889D001BE252 /* ViewController.swift */; };
 		788E7C2521A5889D001BE252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 788E7C2321A5889D001BE252 /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09D7AC0838A970795ABEE4AF /* Pods-esgi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-esgi.release.xcconfig"; path = "Pods/Target Support Files/Pods-esgi/Pods-esgi.release.xcconfig"; sourceTree = "<group>"; };
+		5E8F922F35CFFF2CFE2C3596 /* Pods-esgiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-esgiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-esgiTests/Pods-esgiTests.release.xcconfig"; sourceTree = "<group>"; };
 		788E7C1C21A5889D001BE252 /* esgi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = esgi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		788E7C1F21A5889D001BE252 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		788E7C2121A5889D001BE252 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +40,10 @@
 		788E7C3021A5889E001BE252 /* esgiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = esgiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		788E7C3421A5889E001BE252 /* esgiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = esgiTests.swift; sourceTree = "<group>"; };
 		788E7C3621A5889E001BE252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8609DD5D20ADECBC6B82AD0F /* Pods-esgi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-esgi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-esgi/Pods-esgi.debug.xcconfig"; sourceTree = "<group>"; };
+		B70AC790BFF4D11BEC2ACF49 /* Pods_esgi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_esgi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD17E09228F8865EF9270748 /* Pods-esgiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-esgiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-esgiTests/Pods-esgiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EA682D40290FFD15D86B75D9 /* Pods_esgiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_esgiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585AB58D3274742ED1B5949E /* Pods_esgi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +59,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				176BD7BABEBBB82AC035663B /* Pods_esgiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BA9144CE02ED119C3691C70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B70AC790BFF4D11BEC2ACF49 /* Pods_esgi.framework */,
+				EA682D40290FFD15D86B75D9 /* Pods_esgiTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		788E7C1321A5889C001BE252 = {
 			isa = PBXGroup;
 			children = (
 				788E7C1E21A5889D001BE252 /* esgi */,
 				788E7C3321A5889E001BE252 /* esgiTests */,
 				788E7C1D21A5889D001BE252 /* Products */,
+				7A637D750AFD7CD14C1230BE /* Pods */,
+				2BA9144CE02ED119C3691C70 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +117,17 @@
 			path = esgiTests;
 			sourceTree = "<group>";
 		};
+		7A637D750AFD7CD14C1230BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8609DD5D20ADECBC6B82AD0F /* Pods-esgi.debug.xcconfig */,
+				09D7AC0838A970795ABEE4AF /* Pods-esgi.release.xcconfig */,
+				DD17E09228F8865EF9270748 /* Pods-esgiTests.debug.xcconfig */,
+				5E8F922F35CFFF2CFE2C3596 /* Pods-esgiTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,6 +135,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 788E7C3921A5889E001BE252 /* Build configuration list for PBXNativeTarget "esgi" */;
 			buildPhases = (
+				65E6F6A35126C1276DCF0744 /* [CP] Check Pods Manifest.lock */,
+				7839897E21AC1DC00030C6E8 /* Swiftlint */,
 				788E7C1821A5889D001BE252 /* Sources */,
 				788E7C1921A5889D001BE252 /* Frameworks */,
 				788E7C1A21A5889D001BE252 /* Resources */,
@@ -120,6 +154,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 788E7C3C21A5889E001BE252 /* Build configuration list for PBXNativeTarget "esgiTests" */;
 			buildPhases = (
+				76F080F361906C91632518DF /* [CP] Check Pods Manifest.lock */,
 				788E7C2C21A5889E001BE252 /* Sources */,
 				788E7C2D21A5889E001BE252 /* Frameworks */,
 				788E7C2E21A5889E001BE252 /* Resources */,
@@ -191,6 +226,71 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65E6F6A35126C1276DCF0744 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-esgi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76F080F361906C91632518DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-esgiTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7839897E21AC1DC00030C6E8 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		788E7C1821A5889D001BE252 /* Sources */ = {
@@ -356,6 +456,7 @@
 		};
 		788E7C3A21A5889E001BE252 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8609DD5D20ADECBC6B82AD0F /* Pods-esgi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -374,6 +475,7 @@
 		};
 		788E7C3B21A5889E001BE252 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09D7AC0838A970795ABEE4AF /* Pods-esgi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -392,6 +494,7 @@
 		};
 		788E7C3D21A5889E001BE252 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD17E09228F8865EF9270748 /* Pods-esgiTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -413,6 +516,7 @@
 		};
 		788E7C3E21A5889E001BE252 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E8F922F35CFFF2CFE2C3596 /* Pods-esgiTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
