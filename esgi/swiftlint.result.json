@@ -1,0 +1,7 @@
+/Users/thibautcoutard/Documents/esgi/esgi/esgi/ViewController.swift:23: warning: Vertical Whitespace Violation: Limit vertical whitespace to a single empty line. Currently 2. (vertical_whitespace)
+/Users/thibautcoutard/Documents/esgi/esgi/esgi/ViewController.swift:25: warning: Trailing Newline Violation: Files should have a single trailing newline. (trailing_newline)
+/Users/thibautcoutard/Documents/esgi/esgi/esgiTests/esgiTests.swift:13: warning: Trailing Whitespace Violation: Lines should not have trailing whitespace. (trailing_whitespace)
+/Users/thibautcoutard/Documents/esgi/esgi/esgiTests/esgiTests.swift:18: warning: Trailing Whitespace Violation: Lines should not have trailing whitespace. (trailing_whitespace)
+/Users/thibautcoutard/Documents/esgi/esgi/esgi/AppDelegate.swift:16: warning: Vertical Whitespace Violation: Limit vertical whitespace to a single empty line. Currently 2. (vertical_whitespace)
+/Users/thibautcoutard/Documents/esgi/esgi/esgi/AppDelegate.swift:22: warning: Trailing Newline Violation: Files should have a single trailing newline. (trailing_newline)
+/Users/thibautcoutard/Documents/esgi/esgi/esgi/AppDelegate.swift:17: warning: Line Length Violation: Line should be 120 characters or less: currently 144 characters (line_length)
