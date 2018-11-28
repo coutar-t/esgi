@@ -26,11 +26,6 @@ Push a new beta build to TestFlight
 fastlane ios test
 ```
 test - danger - swiftlint - slather - slack
-### ios launch_rocket
-```
-fastlane ios launch_rocket
-```
-
 
 ----
 
