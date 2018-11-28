@@ -30,4 +30,5 @@ platform :ios do
       output_directory: "report/scan")
     slather(scheme: "esgi", workspace: "esgi.xcworkspace", html: "true")
   end
+
 end
