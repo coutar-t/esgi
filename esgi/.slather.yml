@@ -1,0 +1,10 @@
+# .slather.yml
+
+coverage_service: cobertura_xml
+xcodeproj: esgi.xcodeproj
+workspace: esgi.xcworkspace
+scheme: Esgi
+output_directory: report/slather
+ignore:
+  - Pods/*
+  - "Frameworks/*"

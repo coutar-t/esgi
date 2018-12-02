@@ -9,7 +9,7 @@
 import XCTest
 @testable import esgi
 
-class esgiTests: XCTestCase {
+class EsgiTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
