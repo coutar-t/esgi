@@ -3,3 +3,4 @@ source "https://rubygems.org"
 # @todo fix version
 gem "fastlane"
 gem 'slather'
+gem 'danger'
