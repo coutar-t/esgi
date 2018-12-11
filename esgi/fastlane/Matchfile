@@ -1,0 +1,5 @@
+git_url("git@gitlab.com:coutar-t/esgi-match.git")
+
+type("development") # The default type, can be: appstore, adhoc, enterprise or development
+app_identifier("com.tc.esgi")
+username("thibaut.coutard@gmail.com")
