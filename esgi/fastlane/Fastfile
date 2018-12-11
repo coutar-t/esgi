@@ -47,12 +47,12 @@ platform :ios do
       html: "true",
       output_directory: "report/slather"
     )
-    danger(
-      danger_id: "unit-tests",
-      dangerfile: "esgi/dangerfile",
-      github_api_token: ENV["GITHUB_API_TOKEN"],
-      verbose: true
-    )
+    # danger(
+    #   danger_id: "unit-tests",
+    #   dangerfile: "esgi/dangerfile",
+    #   github_api_token: ENV["GITHUB_API_TOKEN"],
+    #   verbose: true
+    # )
   end
 
 end
