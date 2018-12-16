@@ -1,58 +1,69 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
-
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
-
 default_platform(:ios)
 
 platform :ios do
-  desc "Push a new beta build to TestFlight"
-  lane :beta do
-    build_app(scheme: "esgi")
-    upload_to_testflight
-  end
+  app_provisioning_profile_identifier = "match AppStore com.tc.esgi.jenkins"
 
-  desc "get development certificates using match"
-  lane :certificates do
-    match(app_identifier: "com.tc.esgi", readonly: true)
-  end
-
-  desc "test - danger - swiftlint - slather - slack"
-  lane :test do
+  desc "Lint"
+  lane :lint do
     swiftlint(
-      output_file: "swiftlint.result.json",
+      output_file: "../build/swiftlint/swiftlint.report.xml",
       config_file: ".swiftlint.yml",
-      executable: "Pods/SwiftLint/swiftlint"
+      executable: "Pods/SwiftLint/swiftlint",
+      reporter: "checkstyle"
     )
-    scan(workspace: "esgi.xcworkspace",
+  end
+
+  desc "Test"
+  lane :test do
+    scan(
+      workspace: "esgi.xcworkspace",
       devices: ["iPhone XS"],
       clean: "true",
       code_coverage: "true",
       output_types: "junit",
-      output_directory: "report/scan"
+      output_directory: "../build/scan",
+      output_files: 'report.xml',
+      slack_only_on_failure: "true"
     )
     slather(
-      scheme: "esgi",
-      workspace: "esgi.xcworkspace",
-      html: "true",
-      output_directory: "report/slather"
+      use_bundle_exec: "true",
     )
-    # danger(
-    #   danger_id: "unit-tests",
-    #   dangerfile: "esgi/dangerfile",
-    #   github_api_token: ENV["GITHUB_API_TOKEN"],
-    #   verbose: true
-    # )
   end
 
+  desc "Deploy"
+  lane :deploy do
+    match(
+      type: "appstore",
+    )
+    disable_automatic_code_signing
+    get_provisioning_profile(
+      filename: ENV["APP_PROVISIONING_PROFILE_IDENTIFIER"] + ".mobileprovision"
+    )
+    update_project_provisioning(
+      target_filter: "esgi",
+      profile: ENV["APP_PROVISIONING_PROFILE_IDENTIFIER"] + ".mobileprovision"
+    )
+    gym(
+      scheme: "esgi",
+      include_bitcode: true,
+      skip_profile_detection: true,
+      clean: true,
+      codesigning_identity: ENV["APPSTORE_SIGNING_IDENTITY"],
+      verbose: true
+    )
+    pilot(
+      skip_waiting_for_build_processing: true
+    )
+  end
+
+  # error do |lane, exception|
+  #   commit = last_git_commit
+  #   author = commit[:author]
+  #   slack(
+  #     message: "WESH " + author + " !!! t'as fait quoi ?",
+  #     payload: { "Output" => exception.to_s },
+  #     slack_url: "#{ENV['SLACK_HOOK']}",
+  #     success: false
+  #   )
+  # end
 end
