@@ -17,6 +17,9 @@
 default_platform(:ios)
 
 platform :ios do
+
+  appstore_signing_identity = "iPhone Distribution: Thibaut Coutard (4965NT4QX9)"
+  app_provisioning_profile_identifier = "match AppStore com.tc.esgi"
   desc "Push a new beta build to TestFlight"
   lane :beta do
     build_app(scheme: "esgi")
@@ -26,6 +29,36 @@ platform :ios do
   desc "get development certificates using match"
   lane :certificates do
     match(app_identifier: "com.tc.esgi", readonly: true)
+  end
+
+  desc "send to itunesconnect"
+  lane :deploy do
+    match(
+      type: "appstore",
+    )
+   increment_build_number(
+     build_number: latest_testflight_build_number + 1,
+    xcodeproj: "esgi.xcodeproj"
+   )
+    disable_automatic_code_signing
+    #get_provisioning_profile(
+#      filename: app_provisioning_profile_identifier+ ".mobileprovision"
+#    )
+    update_project_provisioning(
+      target_filter: "esgi",
+      profile: app_provisioning_profile_identifier+ ".mobileprovision"
+    )
+    gym(
+      scheme: "esgi",
+      include_bitcode: true,
+      skip_profile_detection: true,
+      clean: true,
+      codesigning_identity: appstore_signing_identity,
+      verbose: true
+    )
+    pilot(
+#      skip_waiting_for_build_processing: true
+    )
   end
 
   desc "test - danger - swiftlint - slather - slack"
